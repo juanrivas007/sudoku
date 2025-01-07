@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /sudoku/
+
+  # Redirigir a views/index.php
+  DirectoryIndex views/index.php
+
+  # Bloquear acceso directo a archivos sensibles
+  <FilesMatch "(config\.php|functions\.php|Sudoku\.php|GameController\.php)">
+    Require all denied
+  </FilesMatch>
+</IfModule>

@@ -1,0 +1,177 @@
+/* Variables de colores */
+:root {
+    --bright-pink-crayola: #f45b69ff;
+    --lavender-blush: #f6e8eaff;
+    --licorice: #22181cff;
+    --rosewood: #5a0001ff;
+    --vermilion: #f13030ff;
+}
+
+/* General */
+body {
+    background-color: var(--lavender-blush);
+    font-family: 'Arial', sans-serif;
+    color: var(--licorice);
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+h1, h3 {
+    color: var(--bright-pink-crayola);
+}
+
+/* Botones */
+.btn {
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-success {
+    background-color: var(--bright-pink-crayola);
+    border: none;
+    color: var(--lavender-blush);
+}
+
+.btn-success:hover {
+    background-color: var(--rosewood);
+    color: var(--lavender-blush);
+}
+
+.btn-warning {
+    background-color: var(--vermilion);
+    border: none;
+    color: var(--lavender-blush);
+}
+
+.btn-warning:hover {
+    background-color: var(--rosewood);
+    color: var(--lavender-blush);
+}
+
+.btn-danger {
+    background-color: var(--rosewood);
+    border: none;
+    color: var(--lavender-blush);
+}
+
+.btn-danger:hover {
+    background-color: var(--licorice);
+    color: var(--lavender-blush);
+}
+
+.btn-info {
+    background-color: var(--licorice);
+    border: none;
+    color: var(--lavender-blush);
+}
+
+.btn-info:hover {
+    background-color: var(--bright-pink-crayola);
+    color: var(--lavender-blush);
+}
+
+/* Tablas y rankings */
+.list-group-item {
+    background-color: var(--lavender-blush);
+    color: var(--licorice);
+    border-color: var(--bright-pink-crayola);
+}
+
+.list-group-item:hover {
+    background-color: var(--bright-pink-crayola);
+    color: var(--lavender-blush);
+}
+
+/* Modal */
+.modal-content {
+    background-color: var(--lavender-blush);
+    color: var(--licorice);
+    border: 2px solid var(--bright-pink-crayola);
+}
+
+.modal-header {
+    background-color: var(--bright-pink-crayola);
+    color: var(--lavender-blush);
+}
+
+.modal-footer button {
+    background-color: var(--licorice);
+    color: var(--lavender-blush);
+    border: none;
+}
+
+.modal-footer button:hover {
+    background-color: var(--bright-pink-crayola);
+    color: var(--lavender-blush);
+}
+
+/* Contenedor del tablero */
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 0; /* Sin espacio entre las celdas */
+    margin: 20px auto;
+    max-width: 360px;
+    border: 2px solid var(--licorice); /* Ajustado a la paleta */
+    background-color: var(--lavender-blush); /* Ajustado a la paleta */
+}
+
+/* Celdas */
+.sudoku-cell {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid var(--licorice);
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--lavender-blush); /* Fondo ajustado */
+}
+
+/* Estilo para celdas readonly */
+.sudoku-cell[readonly] {
+    background-color: var(--bright-pink-crayola); /* Fondo ajustado */
+    font-weight: bold;
+    color: var(--lavender-blush); /* Texto ajustado */
+}
+
+/* Bordes gruesos para cuadros 3x3 */
+/* Bordes verticales */
+.sudoku-cell:nth-child(3n+1) {
+    border-left: 2px solid #000;
+}
+.sudoku-cell:nth-child(3n) {
+    border-right: 2px solid #000;
+}
+
+/* Bordes horizontales */
+.sudoku-cell {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+/* Líneas gruesas que separan cuadros 3x3 (filas 3 y 6) */
+.sudoku-cell:nth-child(n+19):nth-child(-n+27) {
+    border-bottom: 2px solid #000; /* Fila 3 */
+}
+.sudoku-cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #000; /* Fila 6 */
+}
+
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.sudoku-cell:invalid {
+    border-color: red;
+}
+
+/* Resaltado interactivo */
+.sudoku-cell.highlight {
+    background-color: var(--rosewood);
+    color: var(--lavender-blush);
+    font-weight: bold;
+}
